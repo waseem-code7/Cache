@@ -63,14 +63,52 @@ class LFU:
             return value
 
     def print(self):
+        print(f"MIN FREQ :: {self.min_frequency}")
         for key, dll in self.frequency.items():
             print(f"{key} ::::", end=" ")
             dll.print()
             print()
 
+    def set_next_min_frequency(self):
+        freq = self.min_frequency
+        reset_success = False
+
+        while True:
+            if self.frequency.get(freq).size == 0:
+                freq += 1
+            else:
+                self.min_frequency = freq
+                reset_success = True
+                break
+
+        if not reset_success:
+            self.__init__(self.cap)
+
+    # Delete is not O(1) because min_frequency needs to be reset to correct value on deletion
+    def delete(self, key):
+        if key not in self.map:
+            return None
+
+        if self.size == 1:
+            # reset instance
+            self.__init__(self.cap)
+            return
+
+        node, freq = self.map.get(key)
+        if freq == self.min_frequency:
+            self.frequency.get(freq).remove(key)
+            if self.frequency.get(freq).size == 0:
+                self.set_next_min_frequency()
+        else:
+            self.frequency.get(freq).remove(key)
+
+        if self.size > 0:
+            self.size -= 1
+            del self.map[key]
+
 
 # TESTS
-# lfu = LFU(3)
+# lfu = LFU(4)
 # lfu.set(1,2)
 # lfu.set(2,3)
 # lfu.set(3,4)
@@ -81,6 +119,9 @@ class LFU:
 # lfu.get(2)
 # lfu.get(2)
 # lfu.get(4)
-# lfu.set(1, 2)
+# lfu.get(4)
+# lfu.delete(1)
+# lfu.set(4, 6)
+# lfu.set(7, 6)
 # lfu.print()
 
