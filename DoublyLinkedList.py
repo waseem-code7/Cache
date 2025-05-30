@@ -45,6 +45,8 @@ class DoublyLinkedList:
         node_to_rem.next = None
         node_to_rem.prev = None
 
+        return node_to_rem
+
 
     def remove_last(self):
         if self.head.next == self.tail:

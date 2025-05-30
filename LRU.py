@@ -22,6 +22,10 @@ class LRU:
         data = Data(key, value)
         if self.cap == self.size:
             removed = self.dll.remove_last()
+
+            if removed is None:
+                return
+
             del self.map[removed.data.key]
             node = self.dll.add_first(data)
             self.map[key] = node
@@ -47,6 +51,19 @@ class LRU:
             self.dll.move_to_first(node)
             return node.data.value
         return float("-inf")
+
+    def remove(self, key) -> bool:
+        if key in self.map:
+            node = self.map.get(key)
+            self.dll.move_to_first(node)
+            removed = self.dll.remove_first()
+
+            if removed is None:
+                return False
+
+            del self.map[removed.data.key]
+            return True
+        return False
 
     def print(self):
         if self.size > 0:
