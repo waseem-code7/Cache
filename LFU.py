@@ -84,8 +84,8 @@ class LFU:
         if not reset_success:
             self.__init__(self.cap)
 
-    # Delete is not O(1) because min_frequency needs to be reset to correct value on deletion
-    def delete(self, key):
+    # Remove is not O(1) because min_frequency needs to be reset to correct value on deletion
+    def remove(self, key):
         if key not in self.map:
             return None
 
@@ -120,7 +120,7 @@ class LFU:
 # lfu.get(2)
 # lfu.get(4)
 # lfu.get(4)
-# lfu.delete(1)
+# lfu.remove(1)
 # lfu.set(4, 6)
 # lfu.set(7, 6)
 # lfu.print()
