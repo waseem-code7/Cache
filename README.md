@@ -4,7 +4,7 @@ A Python implementation of **Least Recently Used (LRU) Cache** with support for 
 
 ## 📦 Features
 
-- Fast `O(1)` access time for `get` and `put` operations.
+- Fast `O(1)` access time for `get`, `put` & `remove` operations.
 - Automatic eviction of least recently used items when capacity is exceeded.
 - Custom support for removing specific keys.
 
