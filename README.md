@@ -19,18 +19,18 @@ cache = LRUCache(3)
 ### Add key-value pairs
 ```python
 cache.put(1, 'A')    # Cache: {1: 'A'}
-cache.put(2, 'B')    # Cache: {1: 'A', 2: 'B'}
-cache.put(3, 'C')    # Cache: {1: 'A', 2: 'B', 3: 'C'}
+cache.put(2, 'B')    # Cache: {2: 'B', 1: 'A'}
+cache.put(3, 'C')    # Cache: {3: 'C', 2: 'B', 1: 'A'}
 ```
 
 ### Accessing key 2 makes it most recently used
 ```python
-print(cache.get(2))  # Output: 'B'
+print(cache.get(2))  # Output: 'B', Cache: {2: 'B', 3: 'C', 1: 'A'}
 ```
 
 ### Adding new entry causes eviction of least recently used key (1)
 ```python
-cache.put(4, 'D')    # Cache: {2: 'B', 3: 'C', 4: 'D'}
+cache.put(4, 'D')    # Cache: {4: 'D', 2: 'B', 3: 'C'}
 ```
 
 ### Remove a key
