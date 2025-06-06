@@ -12,24 +12,35 @@ A Python implementation of **Least Recently Used (LRU) Cache** with support for 
 
 from lru_cache import LRUCache  # Rename as appropriate
 
-# Initialize LRU Cache with capacity 3
+### Initialize LRU Cache with capacity 3
+```python
 cache = LRUCache(3)
-
-# Add key-value pairs
+```
+### Add key-value pairs
+```python
 cache.put(1, 'A')    # Cache: {1: 'A'}
 cache.put(2, 'B')    # Cache: {1: 'A', 2: 'B'}
 cache.put(3, 'C')    # Cache: {1: 'A', 2: 'B', 3: 'C'}
+```
 
-# Accessing key 2 makes it most recently used
+### Accessing key 2 makes it most recently used
+```python
 print(cache.get(2))  # Output: 'B'
+```
 
-# Adding new entry causes eviction of least recently used key (1)
+### Adding new entry causes eviction of least recently used key (1)
+```python
 cache.put(4, 'D')    # Cache: {2: 'B', 3: 'C', 4: 'D'}
+```
 
-# Remove a key
+### Remove a key
+```python
 cache.remove(3)      # Cache: {2: 'B', 4: 'D'}
+```
 
-# Explicitly remove the least recently used item
+### Explicitly remove the least recently used item
+```python
 cache.remove_least_recently_used()  # Removes key 2
+```
 
 
