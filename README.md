@@ -81,7 +81,7 @@ print(cache.get(2))  # Output: 'B' → Key2 now freq=2
 print(cache.get(3))  # Output: 'C' → Key3 remains freq=1 (least frequent)
 ```
 
-### Add new entry - evicts least frequent (key3)
+### Add new entry - evicts least frequent (key 3)
 ```python
 cache.set(4, 'D')    # Evicts key3 (lowest freq=1), 
                      # Cache: {1: 'A' (freq=3), 2: 'B' (freq=2), 4: 'D' (freq=1)}
