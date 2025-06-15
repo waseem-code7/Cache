@@ -11,7 +11,7 @@ A Python implementation of **Least Recently Used (LRU) Cache** with support for 
 ## 🚀 Usage
 
 ```python
-from LRU import LRUCache  # Rename as appropriate
+from LRU import LRU  # Rename as appropriate
 ```
 
 ### Initialize LRU Cache with capacity 3
@@ -58,7 +58,7 @@ This Python module implements an **Least Frequently Used Cache** (LFU) with O(1)
 ## 🚀 Usage
 
 ```python
-from LFU import LFUCache
+from LFU import LFU
 ```
 
 ### Initialize LFU Cache with capacity 3
