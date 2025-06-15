@@ -93,7 +93,7 @@ cache.get(2)         # Key2 now freq=3
 cache.get(2)         # Key2 now freq=4
 ```
 
-### Add new entry - evicts least frequent (key4) even though recently added
+### Add new entry - evicts least frequent (key 4) even though recently added
 ```python
 cache.set(5, 'E')    # Evicts key4 (freq=1), 
                      # Cache: {1: 'A' (freq=3), 2: 'B' (freq=4), 5: 'E' (freq=1)}
