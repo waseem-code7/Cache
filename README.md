@@ -50,10 +50,10 @@ cache.remove_least_recently_used()  # Removes key 2
 This Python module implements an **Least Frequently Used Cache** (LFU) with O(1) time complexity for core operations (`get`, `set`). The cache combines frequency tracking with LRU (Least Recently Used) eviction policies to handle items with the same frequency count.
 
 ## 📦 Features
-- `O(1)` time complexity for `get` and `put` operations
-- `O(K)` time complexity for `remove`, K =  number of frequency buckets
-- **Frequency-based eviction** with LRU tie-breaking
-- **Configurable cache capacity**
+- `O(1)` time complexity for `get` and `put` operations.
+- `O(K)` time complexity for `remove`, K =  number of frequency buckets.
+- Frequency-based eviction with LRU tie-breaking.
+- Custom support for removing specific keys.
 
 ## 🚀 Usage
 
