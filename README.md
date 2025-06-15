@@ -87,7 +87,7 @@ cache.set(4, 'D')    # Evicts key3 (lowest freq=1),
                      # Cache: {1: 'A' (freq=3), 2: 'B' (freq=2), 4: 'D' (freq=1)}
 ```
 
-### Access key2 multiple times to increase frequency
+### Access key 2 multiple times to increase frequency
 ```python
 cache.get(2)         # Key2 now freq=3
 cache.get(2)         # Key2 now freq=4
